@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 app.set('view engine', 'ejs');
-
+const {getDate,getDay} = require('./date.js')
 // For Post
 app.use(express.urlencoded({extended:true}))
 
@@ -12,17 +12,7 @@ let workItems = []
 
 app.get('/',(req,res)=>{
     console.log("Request received from client")
-    
-    let today = new Date();
-
-    let options = {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-    }
-    // var day = today.toLocaleDateString("hi-u-ca-indian",options)
-    let day = today.toLocaleDateString("en-BZ",options)
-    
+    let day = getDate()
     res.render('list',{listTitle : day, newListItemsH : newListItems})
 })
 
