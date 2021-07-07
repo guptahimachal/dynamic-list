@@ -11,11 +11,7 @@
 
 <body>
     <div class="box" id="heading">
-        <% if(kindOfDay === 'Sunday') {%> 
-            <h1 style="color:white"> <%=kindOfDay%></h1>
-        <% }else  {%> 
-            <h1 style="color:black"> <%=kindOfDay%></h1>
-        <% } %>
+        <h1 style="color:white"> <%=listTitle%></h1>
     </div> 
 
     <div class="box">
@@ -27,8 +23,8 @@
         <% } %>
 
         <form class="item" action="/" method="POST">
-            <input placeholder="New Item" type="text" name="newItem" id="" autocomplete="off">
-            <button type="submit" name="btn">+</button>
+            <input placeholder="New Item" type="text" name="newItem" id="" autocomplete="off" required>
+            <button type="submit" name="list" value="<%=listTitle%>">+</button>
         </form>
     </div>
 
