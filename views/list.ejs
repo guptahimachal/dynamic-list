@@ -6,8 +6,9 @@
 
     <div class="box">
         <% for( let i = 0; i < newListItemsH.length; i++ ) { %>
-            <div class="item">
-                <input type="checkbox" name="" id="">
+            <div class="item task">
+                <label class="taskLabel" for="task<%=i%>"></label>
+                <input type="checkbox" name="" id="task<%=i%>">
                 <p> <%= newListItemsH[i] %> </p>    
             </div>
         <% } %>
