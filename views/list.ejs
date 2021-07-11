@@ -8,7 +8,7 @@
         <form class="item" action="/" method="POST">
             <input placeholder="New Item" type="text" name="newItem" id="" autocomplete="off" required>
             <button type="submit" name="list" value="<%=listTitle%>">+</button>
-            <button type="submit" form="del-form">-</button>
+            <button type="submit" form="del-form" name="list" value="<%=listTitle%>">-</button>
         </form>
 
         <form action="/delete" method="POST" id="del-form">
