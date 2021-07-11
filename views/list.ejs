@@ -8,15 +8,18 @@
         <form class="item" action="/" method="POST">
             <input placeholder="New Item" type="text" name="newItem" id="" autocomplete="off" required>
             <button type="submit" name="list" value="<%=listTitle%>">+</button>
+            <button type="submit" form="del-form">-</button>
         </form>
 
-        <% for( let i = 0; i < newListItemsH.length; i++ ) { %>
-            <div class="item task">
-                <label class="taskLabel" for="task<%=i%>"></label>
-                <input type="checkbox" name="" id="task<%=i%>">
-                <p> <%= newListItemsH[i].name %> </p>    
-            </div>
-        <% } %>
+        <form action="/delete" method="POST" id="del-form">
+            <% for( let i = 0; i < newListItemsH.length; i++ ) { %>
+                <div class="item task">
+                    <label class="taskLabel" for="task<%=i%>"></label>
+                    <input type="checkbox" name="itemID" value="<%=newListItemsH[i]._id%>" id="task<%=i%>">
+                    <p> <%= newListItemsH[i].name %> </p>    
+                </div>
+            <% } %>
+        </form>
     </div>
 
     <%- include('footer') %>

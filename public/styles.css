@@ -57,15 +57,20 @@ form {
 }
 
 button {
-  min-height: 50px;
+  height: 50px;
   width: 50px;
-  border-radius: 50%;
+  border-radius: 100%;
   border-color: transparent;
+  margin: 0 5px;
   background-color: #A683E3;
   color: #fff;
   font-size: 30px;
   border-width: 0;
   cursor: pointer;
+}
+button:nth-of-type(2){
+  padding-bottom: 4px;
+  background-color: rgb(255, 0, 0);
 }
 
 input[type="text"] {

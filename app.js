@@ -69,6 +69,21 @@ app.post('/',(req,res)=>{
     // }
 })
 
+app.post('/delete',(req,res)=>{
+    // itemToBeDeleted is array containing _id of the items selected in checkbox
+    let itemToBeDeleted = req.body.itemID;
+    Item.deleteMany({ _id: {
+            $in : itemToBeDeleted
+        }
+    }, (err,result)=>{
+        if(err)
+            console.log(err)
+        else
+            console.log(result.deletedCount,"items deleted")
+    });
+    res.redirect('/');
+});
+
 app.get('/work',(req,res)=>{
     res.render("list",{listTitle: "Work List",newListItemsH : workItems})
 })
