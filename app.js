@@ -32,11 +32,6 @@ app.get('/work',(req,res)=>{
     res.render("list",{listTitle: "Work List",newListItemsH : workItems})
 })
 
-app.post('/work',(req,res)=>{
-    workItems.push(req.body.newItem)
-    res.redirect('/work')
-})
-
 app.listen(5000,()=>{
     console.log("Listening at Port 5000")
 })
