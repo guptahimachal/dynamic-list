@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const _ = require('lodash');
 app.set('view engine', 'ejs');
 const {getDate,getDay} = require('./date.js')
 // For Post
@@ -125,7 +126,7 @@ app.post('/delete',(req,res)=>{
 });      
 
 app.get('/:listName',(req,res)=>{
-    const listName = req.params.listName;
+    const listName = _.capitalize(req.params.listName);
     
     List.findOne({name:listName},(err,list)=>{
         if(!err)
